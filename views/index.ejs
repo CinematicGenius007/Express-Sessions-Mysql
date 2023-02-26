@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <meta http-equiv="refresh" content="30"> -->
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/stylesheets/style.css">
+        <style>
+            #container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                gap: 4rem;
+                padding: 4rem;
+                box-sizing: border-box;
+                height: 100vh;
+            }
+
+            .items {
+                text-decoration: none;
+                color: #fff;
+                font-size: 2rem;
+                backdrop-filter: blur(20px);
+                background-color: rgba(255, 255, 255, 0.1);
+                border-radius: 50%;
+                width: 16rem;
+                height: 16rem;
+                box-sizing: border-box;
+                /* center the text vertically and horizontally */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 0.1rem solid rgba(250, 250, 250, 0.2);
+                position: relative;
+            }
+
+            .items:hover::before {
+                opacity: 1;
+            }
+
+            .items::before {
+                background: radial-gradient(
+                    20rem circle at var(--mouse-x) var(--mouse-y),
+                    rgba(224, 112, 6, 0.5),
+                    transparent 40%
+                );
+                border-radius: inherit;
+                content: "";
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                opacity: 0;
+                transition: opacity 0.5s;
+                width: 100%;
+                z-index: 2;
+            }
+
+            #photo-ref {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                padding: 1rem;
+                color: white;
+            }
+        </style>
+        <title>Index</title>
+    </head>
+    <body>
+        <div id="container">
+            <a href="login" class="items">Login</a>
+            <a href="register" class="items">Register</a>
+        </div>
+        <div id="photo-ref">Photo by <a href="https://unsplash.com/@aldebarans?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Aldebaran S</a> on <a href="https://unsplash.com/photos/nRAOQdF4IM4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></div>
+        <script>
+            const items = document.querySelectorAll(".items");
+            items.forEach((item) => {
+                item.addEventListener("mousemove", (event) => {
+                    const { currentTarget: target } = event;
+
+                    const rect = target.getBoundingClientRect(),
+                        x = event.clientX - rect.left,
+                        y = event.clientY - rect.top;
+                    
+                    target.style.setProperty("--mouse-x", `${x}px`);
+                    target.style.setProperty("--mouse-y", `${y}px`);
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "auth",
+  "version": "1.0.0",
+  "description": "Just the basic authentication",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -e js,ejs,css index.js"
+  },
+  "author": "CinematicGenius007",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-mysql-session": "^2.1.8",
+    "express-sessions": "^1.0.6",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.1.2",
+    "node-cron": "^3.0.2",
+    "nodemon": "^2.0.20"
+  }
+}

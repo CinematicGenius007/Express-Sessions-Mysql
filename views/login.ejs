@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <meta http-equiv="refresh" content="30"> -->
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/stylesheets/style.css">
+        <style>
+            #form-container {
+                box-sizing: border-box;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                box-sizing: border-box;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                padding: 1.5rem 2rem;
+                background-color: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(20px);
+                border-radius: 0.5rem;
+                color: white;
+                border: 0.1rem solid rgba(250, 250, 250, 0.2);
+                position: relative;
+            }
+
+            #button {
+                background-color: #e07006;
+                border: none;
+                color: white;
+                padding: 0.5rem 1rem;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 1rem;
+                border-radius: 0.5rem;
+                cursor: pointer;
+            }
+        </style>
+        <title>Index</title>
+    </head>
+    <body>
+        <div id="form-container">
+            <form id="form" method="POST" action="/login">
+                <h1>Login</h1>
+                <div>
+                    <label for="username" class="form-label">Username</label>
+                    <input id="username" name="username" type="text" placeholder="Username" class="form-control" />
+                </div>
+                <div>
+                    <label for="password" class="form-label">Password</label>
+                    <input id="password" name="password" type="password" placeholder="Password" class="form-control" />
+                </div>
+                <div>
+                    <label for="maxAge" class="form-label">Session Time (min)</label>
+                    <input id="maxAge" name="maxAge" type="number" value="60" class="form-control" />
+                </div>
+                <div>
+                    <button type="submit" id="button">Login</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

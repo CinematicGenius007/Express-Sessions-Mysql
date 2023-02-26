@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Product Sans';
+    src: url('../fonts/Product-Sans/Product\ Sans\ Regular.ttf');
+}
+
+html, body {
+    font-family: 'Product Sans', sans-serif;
+    background: url('../images/aldebaran-s-nRAOQdF4IM4-unsplash.jpg') no-repeat center center !important;
+    /* background-color: black; */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}

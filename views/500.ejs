@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/stylesheets/style.css">
+        <style>
+            div {
+                text-decoration: none;
+                color: #fff;
+                font-size: 2rem;
+                backdrop-filter: blur(20px);
+                background-color: rgba(255, 255, 255, 0.1);
+                padding: 1rem;
+                box-sizing: border-box;
+                height: 100vh;
+            }
+        </style>
+        <title>500 Internal Server Error</title>
+    </head>
+    <body>
+        <div>
+            <h1>500 Internal Server Error in <%= url %></h1>
+            <p>There was an internal server error.</p>
+            <% if (err) { %>                
+                <p><%= err %></p>
+            <% } %>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="refresh" content="<%= maxAge %>">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/stylesheets/style.css">
+        <style>
+            #container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                gap: 4rem;
+                padding: 4rem;
+                box-sizing: border-box;
+                height: 100vh;
+            }
+
+            #text {
+                font-size: 4rem;
+                background-color: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(20px);
+                border-radius: 0.5rem;
+                color: white;
+                border: 0.1rem solid rgba(250, 250, 250, 0.2);
+                padding: 1rem 2rem;
+            }
+
+            #logout-text {
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                padding: 1rem;
+                box-sizing: border-box;
+            }
+
+            a {
+                text-decoration: none;
+                color: #fff;
+                font-size: 1rem;
+                backdrop-filter: blur(20px);
+                background-color: rgba(255, 255, 255, 0.1);
+                border: 0.1rem solid rgba(250, 250, 250, 0.2);
+                border-radius: 0.5rem;
+                padding: 0.5rem 1rem;
+                box-sizing: border-box;
+                height: 100vh;
+            }
+        </style>
+        <title>Index</title>
+    </head>
+    <body>
+        <div id="container">
+            <div id="text">
+                <% if (counter) { %>
+                    <div>
+                        <%= counter %>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+        <div id="logout-text">
+            <a href="/logout">Logout</a>
+        </div>
+    </body>
+</html>
